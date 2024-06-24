@@ -1,5 +1,5 @@
 services:
-  ProveedoresSinaiAPI:
+  api_suppliers:
     container_name: suppliers-api
     build:
       context: .
