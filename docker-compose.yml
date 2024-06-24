@@ -1,0 +1,20 @@
+services:
+  ProveedoresSinaiAPI:
+    container_name: suppliers-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgreSQL:5432/sinai_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+    ports:
+      - "8081:8081"
+    networks:
+      - postgresql_default
+
+networks:
+  postgresql_default:
+    external: true
+    name: postgresql_default
