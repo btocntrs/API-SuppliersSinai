@@ -47,7 +47,7 @@ public class SupplierService {
     }
     
     public List<Supplier> readSuppliersByBanco(String banco){
-        return supplierRepository.findByBancoLike("%" + banco + "%");
+        return supplierRepository.findByBancoLikeIgnoreCase("%" + banco + "%");
     }
     
     public Supplier updateSupplier(Supplier updateSupplier) throws SupplierNotFoundException, InvalidSupplierException{

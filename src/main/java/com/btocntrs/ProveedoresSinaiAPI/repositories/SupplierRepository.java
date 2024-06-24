@@ -17,7 +17,9 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
     
     List<Supplier> findByRfc(String rfc);
     
-    List<Supplier> findByBancoLike(String banco);
+    List<Supplier> findByRazonSocialLike(String razonSocial);
+    
+    List<Supplier> findByBancoLikeIgnoreCase(String banco);
     
     @Transactional
     void deleteByRfc(String rfc);
