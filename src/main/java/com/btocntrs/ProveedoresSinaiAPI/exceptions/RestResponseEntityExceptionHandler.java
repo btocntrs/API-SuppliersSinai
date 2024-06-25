@@ -4,7 +4,6 @@
  */
 package com.btocntrs.ProveedoresSinaiAPI.exceptions;
 
-import java.security.InvalidAlgorithmParameterException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
