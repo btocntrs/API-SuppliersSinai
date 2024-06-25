@@ -1,0 +1,44 @@
+## YAML Template.
+spring:
+    profiles:
+        active: dev
+
+---
+server:
+    port: 8082
+spring:
+    config:
+        activate:
+            on-profile: dev
+    application:
+        name: ProveedoresSinaiAPI
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/sinai_db
+        username: postgres
+        password: admin
+    jpa:
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+
+---
+server:
+    port: 8081
+spring:
+    config:
+        activate:
+            on-profile: dep
+    application:
+        name: ProveedoresSinaiAPI
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: ${SPRING_DATASOURCE_URL}
+        username: ${SPRING_DATASOURCE_USERNAME}
+        password: ${SPRING_DATASOURCE_PASSWORD}
+    jpa:
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        show-sql: true
